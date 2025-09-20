@@ -17,22 +17,24 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 15%;
 
-    /* Educational Primary - Deep Blue */
-    --primary: 213 94% 35%;
+    /* Educational Primary - Modern Blue */
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 213 94% 45%;
+    --primary-glow: 217 91% 70%;
+    --primary-dark: 217 91% 45%;
 
-    /* Secondary - Light Blue */
-    --secondary: 213 25% 96%;
-    --secondary-foreground: 213 94% 35%;
+    /* Secondary - Elegant Light */
+    --secondary: 217 20% 97%;
+    --secondary-foreground: 217 91% 45%;
 
     /* Muted tones */
-    --muted: 213 20% 96%;
-    --muted-foreground: 215 15% 45%;
+    --muted: 217 15% 95%;
+    --muted-foreground: 217 20% 55%;
 
-    /* Accent - Educational Purple */
-    --accent: 263 85% 60%;
+    /* Accent - Vibrant Purple */
+    --accent: 270 95% 65%;
     --accent-foreground: 0 0% 100%;
+    --accent-light: 270 95% 85%;
 
     /* Success - Learning Green */
     --success: 142 76% 36%;
@@ -51,19 +53,23 @@
 
     --radius: 0.75rem;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
+    /* Beautiful Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--secondary)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--primary)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --gradient-glow: radial-gradient(circle at center, hsl(var(--primary) / 0.1), transparent 70%);
 
-    /* Shadows */
-    --shadow-card: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -1px hsl(var(--primary) / 0.06);
-    --shadow-button: 0 4px 14px 0 hsl(var(--primary) / 0.25);
-    --shadow-hero: 0 20px 25px -5px hsl(var(--primary) / 0.1), 0 10px 10px -5px hsl(var(--primary) / 0.04);
+    /* Enhanced Shadows */
+    --shadow-card: 0 8px 30px -5px hsl(var(--primary) / 0.15), 0 4px 15px -2px hsl(var(--primary) / 0.08);
+    --shadow-button: 0 6px 20px 0 hsl(var(--primary) / 0.3);
+    --shadow-hero: 0 25px 50px -12px hsl(var(--primary) / 0.25);
+    --shadow-floating: 0 15px 35px -5px hsl(var(--primary) / 0.2), 0 5px 15px -3px hsl(var(--primary) / 0.1);
 
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Smooth Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-spring: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     --sidebar-background: 0 0% 98%;
 

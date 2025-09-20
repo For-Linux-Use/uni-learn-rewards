@@ -91,35 +91,41 @@ const Landing = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-background"></div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-subtle">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-floating"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-floating" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-glow opacity-30 blur-2xl"></div>
+        </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-8">
-            <Badge variant="secondary" className="px-4 py-2 text-sm">
+          <div className="text-center space-y-12 animate-fade-in">
+            <Badge variant="secondary" className="px-6 py-3 text-base font-semibold rounded-full shadow-card">
               🎓 Where Learning Meets Rewards
             </Badge>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground">
-              Master Your Domain with{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                UniXEdu Learn
-              </span>
-            </h1>
+            <div className="space-y-8">
+              <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold leading-tight">
+                Master Your Domain with{" "}
+                <span className="bg-gradient-hero bg-clip-text text-transparent">
+                  UniXEdu Learn
+                </span>
+              </h1>
+              
+              <p className="text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light">
+                Join thousands of students who are advancing their careers with <span className="text-primary font-semibold">domain-specific courses</span>, 
+                earning <span className="text-accent font-semibold">reward points</span>, and building skills that matter in their academic journey.
+              </p>
+            </div>
             
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Join thousands of students who are advancing their careers with domain-specific courses, 
-              earning reward points, and building skills that matter in their academic journey.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
               <Link to="/signup">
-                <Button variant="hero" size="lg" className="text-lg px-8 py-6">
+                <Button variant="hero" size="lg" className="text-xl px-12 py-6 rounded-2xl font-bold">
                   Start Learning Free
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-3 h-6 w-6" />
                 </Button>
               </Link>
               <Link to="/login">
-                <Button variant="outline" size="lg" className="text-lg px-8 py-6">
+                <Button variant="outline" size="lg" className="text-xl px-12 py-6 rounded-2xl font-semibold">
                   Sign In
                 </Button>
               </Link>
@@ -129,13 +135,16 @@ const Landing = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <section className="py-20 bg-background relative">
+        <div className="absolute inset-0 bg-gradient-glow opacity-10"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-primary">{stat.number}</div>
-                <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
+              <div key={index} className="text-center group animate-scale-in" style={{animationDelay: `${index * 0.1}s`}}>
+                <div className="bg-gradient-card p-8 rounded-3xl shadow-floating border border-border/50 group-hover:shadow-hero transition-all duration-500 group-hover:-translate-y-2">
+                  <div className="text-4xl lg:text-5xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-2">{stat.number}</div>
+                  <div className="text-lg text-muted-foreground font-medium">{stat.label}</div>
+                </div>
               </div>
             ))}
           </div>
@@ -143,25 +152,31 @@ const Landing = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+      <section className="py-32 bg-gradient-subtle relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-10 right-20 w-64 h-64 bg-accent/5 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-10 left-20 w-80 h-80 bg-primary/5 rounded-full blur-2xl"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-24 animate-slide-up">
+            <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-8">
               Why Choose UniXEdu Learn?
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               We bridge the gap between academic learning and practical skills with our innovative platform.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
             {features.map((feature, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <feature.icon className="h-8 w-8 text-white" />
+              <div key={index} className="text-center group animate-scale-in" style={{animationDelay: `${index * 0.1}s`}}>
+                <div className="bg-gradient-card p-8 rounded-3xl shadow-floating border border-border/50 hover:shadow-hero transition-all duration-500 hover:-translate-y-4">
+                  <div className="w-20 h-20 bg-gradient-hero rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-button">
+                    <feature.icon className="h-10 w-10 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-4">{feature.title}</h3>
+                  <p className="text-muted-foreground text-base leading-relaxed">{feature.description}</p>
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -169,60 +184,72 @@ const Landing = () => {
       </section>
 
       {/* Courses Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+      <section className="py-32 bg-background relative">
+        <div className="absolute inset-0 bg-gradient-glow opacity-20"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-24 animate-slide-up">
+            <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-8">
               Popular Sample Courses
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Preview courses aligned with your academic domain and start learning today.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
             {courses.map((course, index) => (
-              <CourseCard key={index} {...course} />
+              <div key={index} className="animate-scale-in" style={{animationDelay: `${index * 0.1}s`}}>
+                <CourseCard {...course} />
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-br from-primary to-accent rounded-3xl p-12 text-white">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Ready to Transform Your Learning?
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Join thousands of students who are already earning rewards while building essential skills.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/signup">
-                <Button size="lg" className="bg-white text-primary hover:bg-gray-100 text-lg px-8 py-6">
-                  Get Started Free
-                  <ArrowRight className="ml-2 h-5 w-5" />
+      <section className="py-32">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-gradient-hero rounded-[3rem] p-16 text-white relative overflow-hidden shadow-hero">
+            <div className="absolute inset-0">
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-glow opacity-30"></div>
+              <div className="absolute top-20 left-20 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-floating"></div>
+              <div className="absolute bottom-20 right-20 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-floating" style={{animationDelay: '2s'}}></div>
+            </div>
+            <div className="relative z-10 space-y-8 animate-fade-in">
+              <h2 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Ready to Transform Your Learning?
+              </h2>
+              <p className="text-2xl mb-12 opacity-90 font-light leading-relaxed max-w-3xl mx-auto">
+                Join thousands of students who are already earning rewards while building essential skills.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Link to="/signup">
+                  <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-xl px-12 py-6 font-bold rounded-2xl shadow-floating hover:shadow-hero hover:scale-105">
+                    Get Started Free
+                    <ArrowRight className="ml-3 h-6 w-6" />
+                  </Button>
+                </Link>
+                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white hover:text-primary text-xl px-12 py-6 font-semibold rounded-2xl">
+                  Learn More
                 </Button>
-              </Link>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-6">
-                Learn More
-              </Button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-foreground text-background">
+      <footer className="py-16 bg-gradient-to-b from-foreground to-foreground/90 text-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <BookOpen className="h-6 w-6" />
-              <span className="text-lg font-bold">UniXEdu Learn</span>
+          <div className="text-center space-y-6">
+            <div className="flex items-center justify-center space-x-3">
+              <div className="bg-gradient-hero p-3 rounded-2xl shadow-button">
+                <BookOpen className="h-8 w-8 text-white" />
+              </div>
+              <span className="text-2xl font-bold">UniX<span className="text-primary">Edu</span> Learn</span>
             </div>
-            <p className="text-background/70">
-              Empowering students with domain-specific learning and reward-based education.
+            <p className="text-background/80 text-lg max-w-2xl mx-auto leading-relaxed">
+              Empowering students with domain-specific learning and reward-based education for academic excellence.
             </p>
           </div>
         </div>
